@@ -3,8 +3,8 @@ var interval = 0;
 var velocity = 5;
 var position = 20;
 
-var positionX = [400, 100, 700];
-var positionY = [800, 600, 200];
+var positionX = [400, 300, 500];
+var positionY = [600, 400, 200];
 var reverseX = ['false','false','false'];
 var reverseY = ['false','false','false'];
 
@@ -30,6 +30,8 @@ const windowHeight = currentWindow.getSize()[1];
 */ 
 var maxX = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth);
 var maxY = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
+maxX = maxX - 100;
+maxY = maxY - 100;
 var minX = 0;
 var minY = 0;
 
@@ -119,7 +121,7 @@ function move_position() {
  }
 
 }
- setInterval(move_position, 20);
+ setInterval(move_position, 15);
 
 /*
  if(reverseY){

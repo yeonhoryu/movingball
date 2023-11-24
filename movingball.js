@@ -3,8 +3,8 @@ var interval = 0;
 var velocity = 5;
 var position = 20;
 
-var positionX = [100, 400, 300];
-var positionY = [500, 500, 300];
+var positionX = [400, 100, 700];
+var positionY = [800, 600, 200];
 var reverseX = ['false','false','false'];
 var reverseY = ['false','false','false'];
 
@@ -28,17 +28,19 @@ const currentWindow = remote.getCurrentWindow();
 const windowWidth = currentWindow.getSize()[0];
 const windowHeight = currentWindow.getSize()[1];
 */ 
-var maxX = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) * 0.8;
-var maxY = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) * 0.8;
+var maxX = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth);
+var maxY = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
 var minX = 0;
 var minY = 0;
 
 var ball = document.getElementById('ball');
 var ball_1 = document.getElementById('ball_1');
 var ball_2 = document.getElementById('ball_2');
-var container = document.getElementById('container');
+/* var container = document.getElementById('container');
 container.style.width = maxX + 100 + 'px';
 container.style.height = maxY + 'px';
+*/
+
 // index balls
 // var ArrayBall = ['ball', 'ball_1', 'ball_2'];
 var ArrayBall = [document.getElementById('ball'), 
@@ -91,14 +93,14 @@ function move_position() {
         positionX[i] = positionX[i] + velocity;
     }
     else {
-        positionX[i] = positionX[i] - (velocity * 2) ;
+        positionX[i] = positionX[i] - velocity ;
      }
     
      if (reverseY[i] === false) {
         positionY[i] = positionY[i] + velocity;
     }
     else {
-        positionY[i] = positionY[i] - (velocity * 2);
+        positionY[i] = positionY[i] - velocity;
      }
 
     ArrayBall[i].style.left = positionX[i] + 'px';
